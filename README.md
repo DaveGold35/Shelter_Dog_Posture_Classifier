@@ -11,8 +11,8 @@ For example:
 Each notebook uses a similar input/output path variables, but importantly, it is best to sort your data for training based on posture after the first step/during the second step. 
 
 Datasets used in trial notebooks can be found at:
-    https://huggingface.co/datasets/davegold/ShelterDogsPostureClassification
-    trial4 dataset uses duplicate of trial3 data.
+    https://huggingface.co/datasets/davegold/ShelterDogsPostureClassification .
+Trial4 dataset uses duplicate of trial3 data.
     
 **Notebook use case & ordering:**
 
@@ -22,6 +22,8 @@ Datasets used in trial notebooks can be found at:
  4. Custom_datasets.ipynb                :    split dataset into training, validation, and testing sets
  5. training V2.ipynb                    :    set parameters and train a Resnet 18 model on dataset
  6. testing.ipynb                        :    evaluate trained models using a confusion matrix
+
+<img width="800" alt="Screenshot 2023-12-06 at 9 58 08 AM" src="https://github.com/DaveGold35/Shelter_Dog_Posture_Classifier/assets/139391616/bfda3d77-9dce-419c-bace-fd6f2fe3be0e">
 
 **Notes:**
 
@@ -51,5 +53,6 @@ dog_detection_cropping.ipynb:
     function apply(img, boxes, labels, masks):
         This funciton is created to be able to understand and display what object box is being cropped to and used in order to debug or see a midstep in the process.  
         In order to use and see you must un-comment lines 15-18 in apply procedure cell.
-
+Sobel_inpainting:
+    If you use the procedures in this notebook without useing the pipeline function or 'iter_pip' function, you may run into a error where inpainting only occurs in the top 40x40 box of an image.  This is due to input variable in the _measure_between_lines()_ procedure that's default values are set to 40 for logic checks.  This leads to missing inpainting due to the output of _measure_between_lines()_ returning a variable 'points_with_gaps' that returns a list of gaps for filling in the _fill_between_lines()_ procedure passed as the variable 'set'.
 
