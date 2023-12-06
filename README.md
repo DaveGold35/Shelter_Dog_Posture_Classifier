@@ -1,9 +1,31 @@
 # Shelter_Dog_Posture_Classifier
  This repository holds the experimental implementation of a data processing and model training and testing pipline focused on making images with disrupted foregrounds useable and less noisy to achive better information extraction.
 
-Notes:
+**Folder Structure Design**
 
-d**og_detection_cropping.ipynb:
+When currating datasets to be augmented and trained using these notebooks, inherant datastructures were assumed and implemented in procedures.
+For example:
+    Video_to_frame.ipynb uses an _input path_ variable that needs to referance a folder of videos in the .mp4 format and an _output path_ variable for a destination folder 
+    (which it would create if it doesnt exist)
+
+Each notebook uses a similar input/output path variables, but importantly, it is best to sort your data for training based on posture after the first step/during the second step. 
+
+Datasets used in trial notebooks can be found at:
+    https://huggingface.co/datasets/davegold/ShelterDogsPostureClassification
+    trial4 dataset uses duplicate of trial3 data.
+    
+**Notebook use case & ordering:**
+
+ 1. Video_to_frame.ipynb                 :    to break videos down into frame samples
+ 2. dog_detection_cropping.ipynb         :    use a Resnet50 model to detect dogs, and crop frames to them with padding
+ 3. Sobel_inpainting.ipynb               :    take cropped images, and inpaint the bars in-front of dog images
+ 4. Custom_datasets.ipynb                :    split dataset into training, validation, and testing sets
+ 5. training V2.ipynb                    :    set parameters and train a Resnet 18 model on dataset
+ 6. testing.ipynb                        :    evaluate trained models using a confusion matrix
+
+**Notes:**
+
+dog_detection_cropping.ipynb:
     when cropping to dog using function:
             'find_largest_dog(boxes)'
     there is an issue where the set tested when choosing the 'largest box' is not associated exclusivly with dog objects.  
