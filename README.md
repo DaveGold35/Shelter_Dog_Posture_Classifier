@@ -25,6 +25,10 @@ Datasets used in trial notebooks can be found at:
 
 **Notes:**
 
+Notebooks are designed to be run using Python3.9
+
+Main changes need to be made to **path variables**.
+
 dog_detection_cropping.ipynb:
     when cropping to dog using function:
             'find_largest_dog(boxes)'
@@ -47,3 +51,5 @@ dog_detection_cropping.ipynb:
     function apply(img, boxes, labels, masks):
         This funciton is created to be able to understand and display what object box is being cropped to and used in order to debug or see a midstep in the process.  
         In order to use and see you must un-comment lines 15-18 in apply procedure cell.
+
+
