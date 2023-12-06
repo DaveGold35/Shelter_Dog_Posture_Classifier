@@ -7,7 +7,7 @@ dog_detection_cropping.ipynb:
     when cropping to dog using function:
             'find_largest_dog(boxes)'
     there is an issue where the set tested when choosing the 'largest box' is not associated exclusivly with dog objects.  
-    
+=======
     The following line addition should fix the issue
     
     def find_largest_box(boxes, labels): 
@@ -25,7 +25,3 @@ dog_detection_cropping.ipynb:
     function apply(img, boxes, labels, masks):
         This funciton is created to be able to understand and display what object box is being cropped to and used in order to debug or see a midstep in the process.  
         In order to use and see you must un-comment lines 15-18 in apply procedure cell.
-
-    
-
-    
