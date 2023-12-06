@@ -3,11 +3,11 @@
 
 Notes:
 
-dog_detection_cropping.ipynb:
+d**og_detection_cropping.ipynb:
     when cropping to dog using function:
             'find_largest_dog(boxes)'
     there is an issue where the set tested when choosing the 'largest box' is not associated exclusivly with dog objects.  
-=======
+
     The following line addition should fix the issue
     
     def find_largest_box(boxes, labels): 
