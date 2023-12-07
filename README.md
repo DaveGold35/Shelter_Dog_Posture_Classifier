@@ -10,10 +10,6 @@ For example:
 
 Each notebook uses a similar input/output path variables, but importantly, it is best to sort your data for training based on posture after the first step/during the second step. 
 
-Datasets used in trial notebooks can be found at:
-    https://huggingface.co/datasets/davegold/ShelterDogsPostureClassification .
-Trial4 dataset uses duplicate of trial3 data.
-    
 **Notebook use case & ordering:**
 
  1. Video_to_frame.ipynb                 :    to break videos down into frame samples
